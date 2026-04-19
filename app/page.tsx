@@ -1,5 +1,19 @@
 "use client";
 import AdUnit from "@/components/AdUnit"
+
+import Script from "next/script"
+
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  name: "로또 번호 생성기 (Lotto Generator)",
+  url: "https://lotto.moneystom7.com",
+  description: "행운의 로또 번호를 무작위로 생성하는 무료 도구",
+  applicationCategory: "UtilityApplication",
+  operatingSystem: "Any",
+  offers: { "@type": "Offer", price: "0", priceCurrency: "KRW" },
+  inLanguage: ["ko", "en"],
+}
 import { useState } from "react";
 
 function shuffle(): number[] {
