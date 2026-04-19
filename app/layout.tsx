@@ -10,13 +10,11 @@ export const metadata: Metadata = {
     default: "로또 번호 생성기 — MoneyStom7",
     template: "%s | MoneyStom7",
   },
-  description: "행운의 로또 번호를 무작위로 추천. 무료 로또 번호 생성기. Free random lotto number generator. Generate lucky lottery numbers instantly.",
-  keywords: ["로또 번호 생성기", "Lotto Number Generator", "무료", "온라인", "계산기", "lotto generator", "lottery numbers", "random number generator", "lucky numbers"],
-  authors: [{ name: "MoneyStom7" }],
+  description: "행운의 로또 번호를 무작위로 추천. Free random lotto number generator.",
   alternates: { canonical: "/" },
   openGraph: {
     title: "로또 번호 생성기 — MoneyStom7",
-    description: "행운의 로또 번호를 무작위로 추천. 무료 로또 번호 생성기.",
+    description: "행운의 로또 번호를 무작위로 추천. Free random lotto number generator.",
     url: BASE_URL,
     siteName: "MoneyStom7",
     locale: "ko_KR",
@@ -25,7 +23,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "로또 번호 생성기 — MoneyStom7",
-    description: "행운의 로또 번호를 무작위로 추천. 무료 로또 번호 생성기.",
+    description: "행운의 로또 번호를 무작위로 추천. Free random lotto number generator.",
   },
   robots: {
     index: true,
@@ -39,6 +37,19 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     <html lang="ko">
       <body>
         {children}
+        <Script
+          async
+          src="https://www.googletagmanager.com/gtag/js?id=G-GN51TN6PS4"
+          strategy="afterInteractive"
+        />
+        <Script id="google-analytics" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-GN51TN6PS4');
+          `}
+        </Script>
         <Script
           async
           src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8414331859152952"
